@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "scripts": {
     "prod": "gulp --production",
     "dev": "gulp watch"
@@ -13,6 +13,28 @@
     "laravel-elixir-webpack-official": "^1.0.2",
     "lodash": "^4.16.2",
     "vue": "^2.0.1",
-    "vue-resource": "^1.0.3"
-  }
+    "vue-resource": "^1.0.3",
+    "bootstrap-material-design": "^0.5.10"
+  },
+  "name": "sendmail",
+  "description": "Laravel 5.3 SendMail",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuzoncby/Laravel_SendMail.git"
+  },
+  "keywords": [
+    "Laravel",
+    "Mail"
+  ],
+  "author": "kuzoncby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuzoncby/Laravel_SendMail/issues"
+  },
+  "homepage": "https://github.com/kuzoncby/Laravel_SendMail#readme"
 }

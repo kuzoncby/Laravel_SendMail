@@ -16,9 +16,11 @@ class WorkReport extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($report)
     {
-        //
+        $this->report = $report;
+        $this->from('chenby@openbigdata.org.cn');
+        $this->subject($report['subject']);
     }
 
     /**
@@ -28,6 +30,6 @@ class WorkReport extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.welcome');
+        return $this->view('emails.welcome')->with(['mail' => $this->report]);
     }
 }
