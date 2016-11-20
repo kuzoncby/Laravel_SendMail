@@ -1,0 +1,2 @@
+DROP DATABASE mail;
+CREATE DATABASE mail;
