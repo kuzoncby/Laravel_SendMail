@@ -26,6 +26,11 @@ class MailController extends Controller
         return view('emails.welcome', compact('mail'));
     }
 
+    /**
+     * Send mail
+     * @param Request $request
+     * @return array
+     */
     public function send(Request $request)
     {
         $mail = [

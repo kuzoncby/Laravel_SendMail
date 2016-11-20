@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+// Mail
 Route::get('/mail', 'MailController@view');
 Route::get('/mail/send', 'MailController@send');
+
+// Word
+Route::get('/word', 'WordController@create');
