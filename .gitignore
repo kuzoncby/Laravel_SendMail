@@ -21,3 +21,4 @@ bootstrap/cache/
 
 # Enterprise
 public/images/
+public/*.docx

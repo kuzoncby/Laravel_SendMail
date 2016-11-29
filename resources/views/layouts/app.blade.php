@@ -28,9 +28,9 @@
 </head>
 <body>
 <div id="app">
-    {{--    @include('components.nav')--}}
+    @include('components.nav')
     @yield('content')
-    {{--    @include('components.footer')--}}
+    @include('components.footer')
 </div>
 
 <!-- Scripts -->
