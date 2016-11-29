@@ -30,6 +30,6 @@ class WorkReport extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.welcome')->with(['mail' => $this->report]);
+        return $this->view('emails.welcome')->with(['mail' => $this->report])->attach($this->report['file']);
     }
 }

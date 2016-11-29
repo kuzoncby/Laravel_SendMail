@@ -2,49 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use PhpOffice\PhpWord\IOFactory;
-use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class WordController extends Controller
 {
-    public function create(Request $request)
+    public function create($word)
     {
-        // Creating the new document...
-        $phpWord = new PhpWord();
+        // 陈博洋20161121-20161125周工作报告
+        // Read doc
+        $file = '/home/vagrant/Code/PHPStormProjects/Laravel_SendMail/public/base.docx';
 
-        /* Note: any element you append to a document must reside inside of a Section. */
+        $end = $word['end'];
 
-        // Adding an empty Section to the document...
+        $start = $word['start'];
 
-        $section = $phpWord->addSection();
-        $header = array('size' => 14, 'bold' => true);
+        $templateProcessor = new TemplateProcessor($file);
 
-        $title = '陈博洋' . date('Ymd') . '周工作报告';
+        $templateProcessor->setValue('start_day', $start);
+        $templateProcessor->setValue('end_day', $end);
 
-        $section->addTitle($title);
-        $table = $section->addTable();
+        $templateProcessor->setValue('was', '完成PySpark和Spark集群的对接');
+        $templateProcessor->setValue('is', '修复邮件（Spark破坏了DNS和域认证，邮件没有自动发送）');
+        $templateProcessor->setValue('will_be', '完成PySpark和网站的对接即HDFS文件的自动上传');
+        $templateProcessor->setValue('will_be_two', '完成深度学习框架的调研');
 
-        $table->addRow();
-        $table->addCell(3000)->addText('本周完成的工作');
-        $table->addCell(3000)->addText('本周没完成的计划工作及原因');
-        $table->addCell(3000)->addText('下周工作计划');
+        if ($word['content'] != null) {
+            $templateProcessor->setValue('note', '注意：' . $word['content']);
+        } else {
+            $templateProcessor->setValue('note', date('Ymd'));
+        }
 
-        $table->addRow(900);
-        $table->addCell(3000)->addText('听从长官的命令');
-        $table->addCell(3000)->addText('无');
-        $table->addCell(3000)->addText('等候长官的命令');
+        $target = '陈博洋' . $start . '-' . $end . '周工作报告';
 
-//        for ($r = 1; $r <= 8; $r++) {
-//            $table->addRow();
-//            for ($c = 1; $c <= 5; $c++) {
-//                $table->addCell(1750)->addText("Row {$r}, Cell {$c}");
-//            }
-//        }
-
-        // Saving the document as DOC file...
-        $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
-        $objWriter->save($title . '.docx');
-        return redirect('/');
+        $templateProcessor->saveAs($target . '.docx');
+        return $target;
     }
 }
