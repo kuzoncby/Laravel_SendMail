@@ -16,6 +16,10 @@
             </br>
             <p>陈博洋</p>
             <p class="text-center">{{$mail['copyright']}}</p>
+            <p>Python开发员</p>
+            <p>有限公司</p>
+            <p>中华人民共和国 上海市</p>
+            <p>E-mail：homestead@example.com</p>
         </div>
     </div>
 @endsection

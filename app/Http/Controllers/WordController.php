@@ -10,8 +10,8 @@ class WordController extends Controller
     {
         // 陈博洋20161121-20161125周工作报告
         // Read doc
-        $file = '/home/vagrant/Code/PHPStormProjects/Laravel_SendMail/public/base.docx';
-
+//        $file = '/home/vagrant/Code/PHPStormProjects/Laravel_SendMail/public/base.docx';
+        $file = '/home/kuzoncby/Code/PHPStormProjects/Laravel_SendMail/public/base.docx';
         $end = $word['end'];
 
         $start = $word['start'];
@@ -21,10 +21,14 @@ class WordController extends Controller
         $templateProcessor->setValue('start_day', $start);
         $templateProcessor->setValue('end_day', $end);
 
-        $templateProcessor->setValue('was', '完成PySpark和Spark集群的对接');
-        $templateProcessor->setValue('is', '修复邮件（Spark破坏了DNS和域认证，邮件没有自动发送）');
-        $templateProcessor->setValue('will_be', '完成PySpark和网站的对接即HDFS文件的自动上传');
-        $templateProcessor->setValue('will_be_two', '完成深度学习框架的调研');
+        $templateProcessor->setValue('did1', '数据平台图表');
+        $templateProcessor->setValue('did2', '整合Hive数据平台');
+
+        $templateProcessor->setValue('failed1', 'Kubernetes Ingress(1.2)');
+
+        $templateProcessor->setValue('planning1', '迁移Hadoop Web API');
+        $templateProcessor->setValue('planning2', '制造更多图表');
+        $templateProcessor->setValue('planning3', '编写测试');
 
         if ($word['content'] != null) {
             $templateProcessor->setValue('note', '注意：' . $word['content']);

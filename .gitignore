@@ -20,5 +20,5 @@ bootstrap/cache/
 .idea/
 
 # Enterprise
-public/images/
+public/mail/
 public/陈博洋*.docx
