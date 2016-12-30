@@ -16,8 +16,8 @@
     "vue-resource": "^1.0.3",
     "bootstrap-material-design": "^0.5.10"
   },
-  "name": "sendmail",
-  "description": "Laravel 5.3 SendMail",
+  "name": "blog",
+  "description": "Kuzon Chen Blog",
   "version": "1.0.0",
   "main": "gulpfile.js",
   "directories": {
@@ -25,16 +25,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kuzoncby/Laravel_SendMail.git"
+    "url": "git+git@bitbucket.org:kuzoncby/blog.git"
   },
   "keywords": [
     "Laravel",
-    "Mail"
+    "Blog"
   ],
   "author": "kuzoncby",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kuzoncby/Laravel_SendMail/issues"
+    "url": "https://bitbucket.org/kuzoncby/blog/issues"
   },
-  "homepage": "https://github.com/kuzoncby/Laravel_SendMail#readme"
+  "homepage": "https://www.kuzonchen.com"
 }

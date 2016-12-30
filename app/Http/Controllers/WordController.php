@@ -8,8 +8,6 @@ class WordController extends Controller
 {
     public function create($word)
     {
-        // 陈博洋20161121-20161125周工作报告
-        // Read doc
 //        $file = '/home/vagrant/Code/PHPStormProjects/Laravel_SendMail/public/base.docx';
         $file = '/home/kuzoncby/Code/PHPStormProjects/Laravel_SendMail/public/base.docx';
         $end = $word['end'];
